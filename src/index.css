@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --color-pink-brand: #F4A7C3;
+  --color-pink-dark: #E8849F;
+  --color-green-light: #B8D8BA;
+  --color-green-dark: #2D5F3F;
+  --color-green-medium: #4A7C59;
+  --color-beige: #F5F0EB;
+  --color-beige-dark: #E8E0D8;
+  --font-display: 'Playfair Display', serif;
+  --font-handwritten: 'Caveat', cursive;
+  --font-body: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: #1A1A1A;
+  background-color: #F5F0EB;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F0EB;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2D5F3F;
+  border-radius: 4px;
+}
+
+/* Marquee animation */
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Product card hover */
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+.product-image {
+  transition: transform 0.5s ease;
+}
+
+/* Nav sticky */
+.nav-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+/* Scrollbar hide utility */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
